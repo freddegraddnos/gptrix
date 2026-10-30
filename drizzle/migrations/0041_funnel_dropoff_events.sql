@@ -1,0 +1,2 @@
+ALTER TABLE public.analytics_events DROP CONSTRAINT analytics_events_event_check;
+ALTER TABLE public.analytics_events ADD CONSTRAINT analytics_events_event_check CHECK (event = ANY (ARRAY['ar_started','photo_uploaded','design_saved','shared','studio_clicked','camera_prompt_shown','camera_granted','camera_denied','tryon_started','tryon_completed','booking_started','studio_contact_clicked','booking_completed']));

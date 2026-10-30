@@ -1,0 +1,433 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1789334530701,
+      "tag": "0000_artist_request_workspaces",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1789334771495,
+      "tag": "0001_secure_artist_project_updates_and_booking_sync",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1789334810727,
+      "tag": "0002_search_artists_with_booking_handles",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1789335080922,
+      "tag": "0003_secure_customer_slot_transitions",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1789335162306,
+      "tag": "0004_secure_customer_booking_updates",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1789336255300,
+      "tag": "0005_artist_project_sketch_versions",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1789336394088,
+      "tag": "0006_allow_secure_sketch_approval_transition",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1789336610923,
+      "tag": "0007_harden_customer_slot_update_fields",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1789338927738,
+      "tag": "0008_project_deposits_and_studio_overview",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1789339413731,
+      "tag": "0009_secure_conversation_and_couple_joins",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1789340004964,
+      "tag": "0010_calendar_sessions_and_google_link",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1789341350209,
+      "tag": "0011_project_time_proposals",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1789342455477,
+      "tag": "0012_allow_service_role_slot_booking_updates",
+      "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1789342472034,
+      "tag": "0013_allow_service_role_booking_updates",
+      "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1789343430135,
+      "tag": "0014_project_message_reminder_marker",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1789343875161,
+      "tag": "0015_studio_clients_and_conversation_title",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1789344722951,
+      "tag": "0016_instagram_dms_and_sketch_share",
+      "breakpoints": true
+    },
+    {
+      "idx": 17,
+      "version": "7",
+      "when": 1789345657812,
+      "tag": "0017_add_instagram_account_type",
+      "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1789346239220,
+      "tag": "0018_age_verification",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1789425802833,
+      "tag": "0019_multi_artist_requests",
+      "breakpoints": true
+    },
+    {
+      "idx": 20,
+      "version": "7",
+      "when": 1789428171223,
+      "tag": "0020_user_designs_and_motif_sales",
+      "breakpoints": true
+    },
+    {
+      "idx": 21,
+      "version": "7",
+      "when": 1789429788153,
+      "tag": "0021_studio_approval",
+      "breakpoints": true
+    },
+    {
+      "idx": 22,
+      "version": "7",
+      "when": 1789432981571,
+      "tag": "0022_gallery_style_and_approved_uploads",
+      "breakpoints": true
+    },
+    {
+      "idx": 23,
+      "version": "7",
+      "when": 1789435833406,
+      "tag": "0023_marketplace_motif_categories",
+      "breakpoints": true
+    },
+    {
+      "idx": 24,
+      "version": "7",
+      "when": 1789435973820,
+      "tag": "0024_allow_free_marketplace_motifs",
+      "breakpoints": true
+    },
+    {
+      "idx": 25,
+      "version": "7",
+      "when": 1789436094914,
+      "tag": "0025_public_read_published_marketplace_motifs",
+      "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "7",
+      "when": 1789436146774,
+      "tag": "0026_public_read_marketplace_images",
+      "breakpoints": true
+    },
+    {
+      "idx": 27,
+      "version": "7",
+      "when": 1789442371393,
+      "tag": "0027_studio_handles_backfill",
+      "breakpoints": true
+    },
+    {
+      "idx": 28,
+      "version": "7",
+      "when": 1789474354413,
+      "tag": "0028_add_japanese_category",
+      "breakpoints": true
+    },
+    {
+      "idx": 29,
+      "version": "7",
+      "when": 1789642746548,
+      "tag": "0029_add_studio_phone_and_social",
+      "breakpoints": true
+    },
+    {
+      "idx": 30,
+      "version": "7",
+      "when": 1789644076585,
+      "tag": "0030_add_must_change_password",
+      "breakpoints": true
+    },
+    {
+      "idx": 31,
+      "version": "7",
+      "when": 1790373838231,
+      "tag": "0031_fortnox_and_final_payment",
+      "breakpoints": true
+    },
+    {
+      "idx": 32,
+      "version": "7",
+      "when": 1790374495307,
+      "tag": "0032_studio_payouts",
+      "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "7",
+      "when": 1790393265832,
+      "tag": "0033_tighten_public_read_rules",
+      "breakpoints": true
+    },
+    {
+      "idx": 34,
+      "version": "7",
+      "when": 1790602980137,
+      "tag": "0034_studio_sms_notify",
+      "breakpoints": true
+    },
+    {
+      "idx": 35,
+      "version": "7",
+      "when": 1790630751193,
+      "tag": "0035_booking_decline_reason",
+      "breakpoints": true
+    },
+    {
+      "idx": 36,
+      "version": "7",
+      "when": 1790631294863,
+      "tag": "0036_booking_intake_and_base_photo",
+      "breakpoints": true
+    },
+    {
+      "idx": 37,
+      "version": "7",
+      "when": 1790742265383,
+      "tag": "0037_restore_conversation_member_execute",
+      "breakpoints": true
+    },
+    {
+      "idx": 38,
+      "version": "7",
+      "when": 1790744794263,
+      "tag": "0038_adult_declaration_booking_gate",
+      "breakpoints": true
+    },
+    {
+      "idx": 39,
+      "version": "7",
+      "when": 1790795348831,
+      "tag": "0039_studio_motif_commission",
+      "breakpoints": true
+    },
+    {
+      "idx": 40,
+      "version": "7",
+      "when": 1790805658261,
+      "tag": "0040_funnel_events_and_request_read",
+      "breakpoints": true
+    },
+    {
+      "idx": 41,
+      "version": "7",
+      "when": 1790807723646,
+      "tag": "0041_funnel_dropoff_events",
+      "breakpoints": true
+    },
+    {
+      "idx": 42,
+      "version": "7",
+      "when": 1790817508609,
+      "tag": "0042_funnel_events_v2_and_studio_waitlist",
+      "breakpoints": true
+    },
+    {
+      "idx": 43,
+      "version": "7",
+      "when": 1790891590787,
+      "tag": "0043_tighten_studio_waitlist_insert",
+      "breakpoints": true
+    },
+    {
+      "idx": 44,
+      "version": "7",
+      "when": 1790900397057,
+      "tag": "0044_studio_booking_agent",
+      "breakpoints": true
+    },
+    {
+      "idx": 45,
+      "version": "7",
+      "when": 1790901144876,
+      "tag": "0045_studio_handle_history_and_agent_language",
+      "breakpoints": true
+    },
+    {
+      "idx": 46,
+      "version": "7",
+      "when": 1790902823311,
+      "tag": "0046_studio_theme_and_message_templates",
+      "breakpoints": true
+    },
+    {
+      "idx": 47,
+      "version": "7",
+      "when": 1791755541480,
+      "tag": "0047_studio_coordinates_from_addresses",
+      "breakpoints": true
+    },
+    {
+      "idx": 48,
+      "version": "7",
+      "when": 1791782540227,
+      "tag": "0048_block_studio_to_studio_requests",
+      "breakpoints": true
+    },
+    {
+      "idx": 49,
+      "version": "7",
+      "when": 1791844559494,
+      "tag": "0049_booking_link_record",
+      "breakpoints": true
+    },
+    {
+      "idx": 50,
+      "version": "7",
+      "when": 1791851562291,
+      "tag": "0050_session_plan_decisions",
+      "breakpoints": true
+    },
+    {
+      "idx": 51,
+      "version": "7",
+      "when": 1791853913880,
+      "tag": "0051_idea_size_context",
+      "breakpoints": true
+    },
+    {
+      "idx": 52,
+      "version": "7",
+      "when": 1791853964290,
+      "tag": "0052_request_size_context",
+      "breakpoints": true
+    },
+    {
+      "idx": 53,
+      "version": "7",
+      "when": 1791855598053,
+      "tag": "0053_session_plan_and_theme_draft",
+      "breakpoints": true
+    },
+    {
+      "idx": 54,
+      "version": "7",
+      "when": 1791924591950,
+      "tag": "0054_studio_onboarding_progress",
+      "breakpoints": true
+    },
+    {
+      "idx": 55,
+      "version": "7",
+      "when": 1791925453903,
+      "tag": "0055_motif_terms_and_help_requests",
+      "breakpoints": true
+    },
+    {
+      "idx": 56,
+      "version": "7",
+      "when": 1791925973555,
+      "tag": "0056_motif_placements_coverage",
+      "breakpoints": true
+    },
+    {
+      "idx": 57,
+      "version": "7",
+      "when": 1793385000000,
+      "tag": "0057_studio_modules",
+      "breakpoints": true
+    },
+    {
+      "idx": 58,
+      "version": "7",
+      "when": 1793385001000,
+      "tag": "0058_request_motif_context",
+      "breakpoints": true
+    },
+    {
+      "idx": 59,
+      "version": "7",
+      "when": 1793385002000,
+      "tag": "0059_studio_draft_start",
+      "breakpoints": true
+    },
+    {
+      "idx": 60,
+      "version": "7",
+      "when": 1793385003000,
+      "tag": "0060_tattoo_offer_availability",
+      "breakpoints": true
+    }
+  ]
+}

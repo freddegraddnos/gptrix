@@ -1,0 +1,17 @@
+# Uppdatera /for-studios – i fyra samordnade delar
+
+## Målet
+Gör den befintliga sidan till en tydlig, mobilanpassad presentation för tatueringsstudios, med budskapet **”Fler kunder. Nöjdare kunder. Mindre admin.”** och motsvarande engelska text. Behåll InkSimulator-loggan, typsnitten och den **lila** accenten du valde – inte cyan. Ändra inte övriga webbplatsens utseende, AR, konton, betalningar eller bokningslogik.
+
+## Genomförande
+
+1. **Säkra fakta och bevara guiden.** Kontrollera aktuella priser, moms, provisionens underlag, Fortnox-transaktioner, agentens faktiska bokningssteg och kontovillkor innan text publiceras. Anpassa påståenden som inte kan beläggas. Flytta användbar steg-för-steg-information från den nuvarande långa sidan till en separat, länkad studioguide. Behåll gamla avsnittslänkar fungerande där det är möjligt. Använd befintligt telefon-/kontaktflöde för ”Anslut min studio”; knappen ska inte låtsas skapa ett konto automatiskt.
+
+2. **Bygg om presentationssidan.** Använd den uppladdade svenska och engelska texten som innehållsunderlag, visa ett språk i taget och följ ordningen: introduktion → fler kunder → nöjdare kunder → digital närvaro → storlek/placering → förberedelser i studion → mindre admin → Fortnox → bokning/intäktsvägar → produktvisning → pris/uppstart → FAQ → avslutande kontaktknapp. Lägg en kort produktbeskrivning på ett lämpligt ställe. Lyft nyttan för studion utan garantier om bokningar, besparingar eller ranking. Använd befintliga verkliga produktbilder för AR, studiosökning och panel; publicera inga fabricerade omdömen, siffror, kunduppgifter eller låtsasreglage. Behåll Posture Pro kortfattat vid priset om erbjudandet verifieras.
+
+3. **Språk och sökbarhet.** Visa ”Svenska | English” direkt i sidhuvudet också på mobil, med minst 44 px tryckytor, synligt valt läge, tangentbordsfokus och skärmläsarstöd. Behåll uttryckligt språkval och svensk webbläsarpreferens. Låt befintliga `/for-studios` vara engelsk standardadress och skapa en separat svensk adress `/sv/for-studios` så båda språk kan läsas av sökmotorer utan att klicka. Länka motsvarande språkversioner med rätt titel, metabeskrivning, canonical, hreflang och sidans `lang`; kontrollera sidkartans och den befintliga textversionens innehåll. Behåll den engelska varumärkesraden ”From Think it to Ink it.” i båda språk.
+
+4. **Kontroll och finputsning.** Återanvänd befintlig klickmätning utan kunddata eller dubbelräkning. Verifiera att kontakt- och pris-/inloggningslänkar går rätt, att den sekundära knappen öppnar produktvisningen, och att FAQ, rubriker, översättningar, bilder, fokus, kontrast och layout fungerar på mobil och dator. Kontrollera HTTP-svar och sökmetadata på båda språkadresserna samt att delningsmetadata beskriver den synliga sidan. Avsluta med en tydlig redovisning av vad som faktiskt verifierats och eventuella påståenden som behövde tonas ned.
+
+## Tekniska ramar
+Återanvänd sidans `seo()`-mönster, språkval och temavariabler. Den nuvarande `/for-studios` är en engelskt för-renderad sida med klientstyrt språk, så en egen svensk adress krävs för separat indexerbar svensk HTML. Sidans befintliga guidebilder, `/for-studios.md`, sidkarta och analysmätning används där de är relevanta. Prisraden 299 kr/mån, 2 999 kr/år och 5 % finns på nuvarande prissida; momspåståenden får inte göras förrän avtalsvillkoren har kontrollerats. En eventuell särskild bild med samma motiv i två storlekar används bara om verkligt, godkänt produktmaterial finns.

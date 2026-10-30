@@ -1,0 +1,2 @@
+ALTER TABLE public.studio_slots ADD COLUMN IF NOT EXISTS requires_3d boolean NOT NULL DEFAULT false;
+ALTER TABLE public.studio_availability ADD COLUMN IF NOT EXISTS requires_3d boolean NOT NULL DEFAULT false;

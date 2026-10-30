@@ -1,0 +1,14 @@
+REVOKE EXECUTE ON FUNCTION public.bump_conversation_last_message() FROM anon, authenticated;
+REVOKE EXECUTE ON FUNCTION public.handle_new_user() FROM anon, authenticated;
+REVOKE EXECUTE ON FUNCTION public.notify_on_comment() FROM anon, authenticated;
+REVOKE EXECUTE ON FUNCTION public.notify_on_follow() FROM anon, authenticated;
+REVOKE EXECUTE ON FUNCTION public.notify_on_like() FROM anon, authenticated;
+REVOKE EXECUTE ON FUNCTION public.notify_on_message() FROM anon, authenticated;
+REVOKE EXECUTE ON FUNCTION public.set_updated_at() FROM anon, authenticated;
+REVOKE EXECUTE ON FUNCTION public.is_conversation_member(uuid, uuid) FROM anon, authenticated;
+REVOKE EXECUTE ON FUNCTION public.top_shared_motifs(integer, integer) FROM anon;
+REVOKE EXECUTE ON FUNCTION public.ensure_referral_code() FROM anon;
+REVOKE EXECUTE ON FUNCTION public.redeem_referral(text) FROM anon;
+REVOKE EXECUTE ON FUNCTION public.set_scan_scale(uuid, numeric) FROM anon;
+REVOKE EXECUTE ON FUNCTION public.search_user_handles(text) FROM anon;
+REVOKE EXECUTE ON FUNCTION public.is_handle_available(text) FROM anon;

@@ -1,0 +1,1 @@
+ALTER TABLE public.studio_instagram_links ADD COLUMN account_type text;

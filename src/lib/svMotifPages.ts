@@ -1,0 +1,197 @@
+import type { Faq } from "@/components/SvLanding";
+
+export type MotifPage = {
+  slug: string;
+  label: string;
+  title: string;
+  desc: string;
+  h1: string;
+  intro: string;
+  ideas: string[];
+  meaning?: string;
+  placement: string;
+  faq: Faq[];
+};
+
+const tryFaq: Faq = {
+  q: "Kan jag prova motivet innan jag bokar?",
+  a: "Ja. Välj ett motiv i biblioteket eller ladda upp en egen bild och prova det på huden i AR eller på ett foto. Slutlig storlek och placering stämmer du av med tatueraren.",
+};
+
+export const MOTIF_PAGES: MotifPage[] = [
+  {
+    slug: "fineline-tatuering", label: "Fineline tatuering",
+    title: "Fineline tatuering – tunna linjer, motiv & AR-provning",
+    desc: "Fineline tatuering för handled och underarm: jämför tunna linjer, små motiv och placering. Prova skisser i AR eller på foto innan du bokar.",
+    h1: "Fineline tatuering",
+    intro: "Fineline beskriver ett uttryck med tunna linjer, inte ett särskilt motiv. Här kan du jämföra riktiga skisser ur biblioteket och prova hur de passar på din egen kropp.",
+    ideas: ["En blomma med tunn stjälk längs underarmen", "En fjäril med luft mellan vingarnas detaljer", "Ett litet linjemotiv på handleden", "En botanisk komposition med mer utrymme på överarmen"],
+    placement: "Handled och underarm är vanliga önskemål, men ett fint linjemotiv behöver inte vara litet. Låt tatueraren bedöma minsta storlek och avstånd mellan linjerna. En digital skiss visar placeringen, inte hur linjerna läker eller åldras.",
+    faq: [
+      { q: "Vad är skillnaden mellan fineline och en liten tatuering?", a: "Fineline handlar om linjernas uttryck. En liten tatuering handlar om storleken och kan även ha kraftiga konturer. Tunna linjer behöver fortfarande tillräckligt med utrymme." },
+      { q: "Håller en fineline-tatuering lika bra överallt?", a: "Hud, placering, teknik och eftervård påverkar resultatet. Be tatueraren visa läkta arbeten och bedöma ditt motiv; en AR-bild kan inte förutsäga hållbarheten." },
+      { q: "Vad kostar en fineline-tatuering?", a: "Studion sätter priset utifrån bland annat skissarbete, storlek, detaljer och tid. Skicka en förhandsvisning och be om en individuell bedömning." }, tryFaq,
+    ],
+  },
+  {
+    slug: "realistisk-tatuering", label: "Realistisk tatuering",
+    title: "Realistisk tatuering – porträtt, skuggning & motiv i AR",
+    desc: "Realistisk tatuering med porträtt, djur och rosor. Jämför realism i svart och grått, prova placering i AR och ta din idé till en tatuerare.",
+    h1: "Realistisk tatuering",
+    intro: "Realism bygger på ljus, skugga och igenkännbara detaljer. Prova bibliotekets realistiska skisser på kroppen för att jämföra komposition och storlek innan du diskuterar utförandet med en studio.",
+    ideas: ["Ett djurporträtt med tydliga ögon och mjuka skuggor", "En ros i svart och grått", "Ett porträtt från en egen tydlig referensbild", "Naturmotiv som kombinerar djur och landskap"],
+    placement: "Överarm, lår och rygg ger utrymme för skuggor och detaljer. Underarm kan också fungera beroende på kompositionen. Förminska inte ett porträtt enbart för att det får plats i förhandsvisningen; fråga tatueraren vilken storlek detaljerna behöver.",
+    faq: [
+      { q: "Vad skiljer realism från andra tatueringsstilar?", a: "Realism efterliknar ett fotografiskt eller naturtroget uttryck med skuggor och proportioner, snarare än förenklade symboler eller tydliga traditional-konturer." },
+      { q: "Vilken bild ska jag ta med för ett porträtt?", a: "Välj en skarp bild med tydligt ansikte, bra ljus och utan kraftiga filter. Använd en bild du har rätt att använda och låt tatueraren avgöra om den fungerar som referens." },
+      { q: "Visar AR exakt hur den färdiga tatueringen blir?", a: "Nej. AR är ett placeringsförslag. Tatuerarens teknik, huden, färgerna och läkningen påverkar det slutliga resultatet." }, tryFaq,
+    ],
+  },
+  {
+    slug: "djur-tatuering", label: "Djur tatuering",
+    title: "Djur tatuering – varg, lejon, fågel & fler motiv att prova",
+    desc: "Djur tatuering som inspiration: varg, lejon, fågel, orm och fjäril. Jämför motiv och stilar och testa tatueringen i AR eller på ett foto.",
+    h1: "Djur tatuering",
+    intro: "Ett husdjur, ett vilt djur eller en enkel siluett kan bli utgångspunkten för din tatuering. Börja med djuret som betyder något för dig och jämför sedan stil, rörelse och placering.",
+    ideas: ["Varg eller lejon som porträtt på överarmen", "En fågel i rörelse längs underarmen", "Orm eller fisk med en långsmal komposition", "En fjäril i fineline eller med kraftigare konturer", "Ett eget husdjur utifrån ett tydligt fotografi"],
+    meaning: "Djur kan förknippas med egenskaper som styrka eller frihet, men har ingen universell betydelse. Din egen berättelse kan vara viktigare än en traditionell symbolik.",
+    placement: "Siluetter kan fungera i mindre format medan päls, fjädrar och porträtt kräver mer utrymme. Jämför djurets riktning på arm eller ben och stäm av kompositionen med tatueraren innan du bestämmer storlek.",
+    faq: [
+      { q: "Vilken stil passar en djurtatuering?", a: "Realism passar porträtt och skuggning, fineline ger ett lätt linjeuttryck och traditional använder kraftiga former. Jämför flera uttryck för samma djur innan du väljer." },
+      { q: "Kan jag skapa en tatuering av mitt husdjur?", a: "Ja, börja med en egen tydlig bild och diskutera den med tatueraren. Du kan prova en bild digitalt, men en tatuering behöver anpassas till huden." },
+      { q: "Får jag använda en skiss från biblioteket?", a: "Digital provning och rätt att tatuera eller köpa ett motiv är olika saker. Kontrollera motivets villkor och kontakta den ansvariga studion." }, tryFaq,
+    ],
+  },
+  {
+    slug: "sma-tatueringar",
+    label: "Små tatueringar",
+    title: "Små tatueringar – idéer och placeringar du kan prova | InkSimulator",
+    desc: "Idéer till små tatueringar för handled, fotled, finger och bakom örat. Prova storleken på din egen hud i AR innan du bokar.",
+    h1: "Små tatueringar",
+    intro: "En liten tatuering är ett bra första motiv. Storleken är svår att föreställa sig – prova den på huden innan du bestämmer dig.",
+    ideas: ["Enkla symboler som hjärta, stjärna eller måne", "Initialer, datum och korta ord", "Fineline-blommor och små kvistar", "Små djur och siluetter"],
+    placement: "Vanliga placeringar är handled, insidan av underarmen, fotled, finger och bakom örat. Mycket små detaljer kan flyta ihop med åren, så fråga tatueraren hur litet motivet kan göras.",
+    faq: [
+      { q: "Hur liten kan en tatuering vara?", a: "Det beror på motivets detaljer och tatuerarens teknik. Fråga studion vilken minsta storlek de rekommenderar för ditt motiv." },
+      tryFaq,
+    ],
+  },
+  {
+    slug: "tatuering-blommor",
+    label: "Blommor",
+    title: "Tatuering blommor – idéer, stilar och placering | InkSimulator",
+    desc: "Inspiration till blomtatueringar: rosor, pioner, vildblommor och buketter. Prova motivet på din egen kropp i AR.",
+    h1: "Tatuering med blommor",
+    intro: "Blommor fungerar i nästan alla storlekar – från en liten kvist på handleden till en hel sleeve.",
+    ideas: ["Enstaka blomma i fineline", "Bukett eller krans", "Vildblommor och pressade blommor", "Pioner och krysantemum i större format"],
+    meaning: "Blommor har olika traditionella betydelser, men det viktigaste är vad motivet betyder för dig.",
+    placement: "Långsmala motiv passar underarm, ben och revben. Runda buketter passar axel, lår och rygg.",
+    faq: [{ q: "Vilken blomma passar för en liten tatuering?", a: "Blommor med enkla former, som tulpan eller lavendel, håller sig tydliga även i liten storlek." }, tryFaq],
+  },
+  {
+    slug: "tatuering-fjaril",
+    label: "Fjäril",
+    title: "Tatuering fjäril – idéer, betydelse och placering | InkSimulator",
+    desc: "Fjärilstatueringar i fineline, skuggat och minimalistiskt. Läs om vanliga tolkningar och prova fjärilen på din hud i AR.",
+    h1: "Fjäril tatuering",
+    intro: "Fjärilen är ett av de populäraste motiven och fungerar både mycket litet och stort.",
+    ideas: ["Minimalistisk kontur", "Skuggad fjäril i svart och grått", "Flera fjärilar i rörelse", "Halv fjäril och halv blomma"],
+    meaning: "Fjärilen tolkas ofta som förvandling, frihet och en ny början.",
+    placement: "Vanligt på handled, nacke, axel och mellan skulderbladen.",
+    faq: [{ q: "Vad betyder en fjäril tatuering?", a: "Den förknippas ofta med förvandling och frihet, men betydelsen är personlig." }, tryFaq],
+  },
+  {
+    slug: "tatuering-hjarta",
+    label: "Hjärta",
+    title: "Tatuering hjärta – små hjärtan och idéer | InkSimulator",
+    desc: "Idéer till hjärttatueringar: minimalistiska, traditionella och matchande hjärtan. Prova storlek och placering i AR.",
+    h1: "Hjärta tatuering",
+    intro: "Ett hjärta är enkelt, tydligt och fungerar i alla storlekar och stilar.",
+    ideas: ["Litet kontur-hjärta", "Traditional-hjärta med banderoll och namn", "Anatomiskt hjärta", "Matchande hjärtan för par eller vänner"],
+    placement: "Små hjärtan placeras ofta på finger, handled eller bakom örat.",
+    faq: [{ q: "Kan vi göra matchande tatueringar?", a: "Ja. Prova samma motiv var för sig i AR för att se storlek och placering på er båda." }, tryFaq],
+  },
+  {
+    slug: "tatuering-kompass",
+    label: "Kompass",
+    title: "Tatuering kompass – idéer och placering | InkSimulator",
+    desc: "Kompasstatueringar: kompassros, geometriska och maritima motiv. Prova kompassen på din egen kropp i AR.",
+    h1: "Kompass tatuering",
+    intro: "Kompassen kombineras ofta med kartor, berg eller koordinater.",
+    ideas: ["Kompassros med fina linjer", "Geometrisk kompass", "Kompass med karta eller berg", "Maritim kompass i traditional-stil"],
+    meaning: "Kompassen tolkas ofta som riktning, resor och att hitta hem.",
+    placement: "Runda motiv passar underarm, överarm, axel och bröst.",
+    faq: [{ q: "Hur stor bör en kompass vara?", a: "Detaljerade kompasser behöver plats för att linjerna ska hålla. Stäm av storleken med tatueraren." }, tryFaq],
+  },
+  {
+    slug: "tatuering-fagel",
+    label: "Fågel",
+    title: "Tatuering fågel – svala, örn och fler idéer | InkSimulator",
+    desc: "Fågeltatueringar: svalor, örnar, kolibrier och flygande flockar. Prova motivet på din hud i AR.",
+    h1: "Fågel tatuering",
+    intro: "Fåglar ger rörelse åt en tatuering och kan göras små eller stora.",
+    ideas: ["Flygande fåglar i siluett", "Traditional-svala", "Örn på bröst eller rygg", "Kolibri med blommor"],
+    meaning: "Fåglar förknippas ofta med frihet; svalan har länge varit ett sjömansmotiv.",
+    placement: "Flockar passar nyckelben och handled; större fåglar passar bröst, rygg och lår.",
+    faq: [{ q: "Vilken fågel passar som liten tatuering?", a: "Enkla siluetter av fåglar i flykt fungerar bra i liten storlek." }, tryFaq],
+  },
+  {
+    slug: "tatuering-stjarna",
+    label: "Stjärna",
+    title: "Tatuering stjärna – stjärnbilder och små stjärnor | InkSimulator",
+    desc: "Stjärntatueringar: små stjärnor, stjärnbilder och nordstjärnan. Prova motivet på din egen hud i AR.",
+    h1: "Stjärna tatuering",
+    intro: "Stjärnor är enkla att anpassa – en enda, flera i rad eller en hel stjärnbild.",
+    ideas: ["Liten stjärna i kontur", "Ditt stjärntecken som stjärnbild", "Nordstjärnan", "Stjärnor och måne"],
+    placement: "Vanligt på finger, handled, fotled och bakom örat.",
+    faq: [{ q: "Kan jag tatuera min stjärnbild?", a: "Ja, stjärnbilder är populära. Prova storleken så att avståndet mellan punkterna blir tydligt." }, tryFaq],
+  },
+  {
+    slug: "tatuering-orm",
+    label: "Orm",
+    title: "Tatuering orm – idéer, betydelse och placering | InkSimulator",
+    desc: "Ormtatueringar för underarm, handled och ben, med blommor eller i fineline. Prova ormen på din kropp i AR.",
+    h1: "Orm tatuering",
+    intro: "Ormens form följer kroppen, vilket gör den populär runt armar och ben.",
+    ideas: ["Slingrande orm i fineline", "Orm med pioner eller rosor", "Traditional-orm i färg", "Orm och dolk"],
+    meaning: "Ormen tolkas ofta som förnyelse, eftersom den ömsar skinn.",
+    placement: "Passar underarm, längs ryggraden, runt vaden och lår.",
+    faq: [{ q: "Vilken placering passar en orm?", a: "Långsmala placeringar som underarm och ben följer ormens form bäst." }, tryFaq],
+  },
+  {
+    slug: "tatuering-ros",
+    label: "Ros",
+    title: "Tatuering ros – traditional, fineline och fler stilar | InkSimulator",
+    desc: "Rostatueringar i traditional-, fineline- och realistisk stil. Prova rosen på din egen kropp i AR innan du bokar.",
+    h1: "Ros tatuering",
+    intro: "Rosen är ett klassiskt motiv som fungerar ensamt eller i en större komposition.",
+    ideas: ["Traditional-ros med kraftig kontur", "Fineline-ros med stjälk", "Realistisk ros i svart och grått", "Ros med namn eller datum"],
+    meaning: "Rosen förknippas ofta med kärlek, både glädje och saknad.",
+    placement: "Vanligt på underarm, hand, axel och lår.",
+    faq: [{ q: "Ska rosen vara i färg eller svart?", a: "Båda fungerar. Prata med tatueraren om hur färg håller sig på din hud." }, tryFaq],
+  },
+  {
+    slug: "tatuering-varg",
+    label: "Varg",
+    title: "Tatuering varg – idéer och placering | InkSimulator",
+    desc: "Vargtatueringar: varg i profil, ylande varg och geometriska vargar. Prova motivet på din kropp i AR.",
+    h1: "Varg tatuering",
+    intro: "Vargen är ett starkt motiv som ofta görs i större format för att få med detaljer.",
+    ideas: ["Realistiskt varghuvud", "Ylande varg mot månen", "Geometrisk varg", "Varg med skog eller berg"],
+    meaning: "Vargen tolkas ofta som lojalitet, styrka och familj.",
+    placement: "Passar överarm, underarm, bröst, lår och rygg – eller som del av en sleeve.",
+    faq: [{ q: "Hur stor bör en vargtatuering vara?", a: "Realistiska vargar kräver plats för detaljer. Prova storleken och stäm av med tatueraren." }, tryFaq],
+  },
+  {
+    slug: "japansk-tatuering",
+    label: "Japansk tatuering",
+    title: "Japansk tatuering – koi, drakar och vågor | InkSimulator",
+    desc: "Japansk tatuering (irezumi): koi, drakar, vågor och körsbärsblommor. Prova större motiv och sleeves på din kropp i AR.",
+    h1: "Japansk tatuering",
+    intro: "Japansk tatuering bygger på en lång tradition med kraftiga linjer, vind, vågor och stora sammanhängande motiv.",
+    ideas: ["Koi-fisk i vågor", "Drake över arm eller rygg", "Körsbärsblommor", "Hannya-mask och tiger"],
+    meaning: "Motiven har ofta traditionella berättelser, och bakgrunden binder ihop dem till en helhet.",
+    placement: "Görs ofta som halvsleeve, helsleeve eller ryggstycke. Planera helheten med en tatuerare som arbetar i stilen.",
+    faq: [{ q: "Måste en japansk tatuering vara stor?", a: "Nej, men stilen är gjord för stora kompositioner. Mindre motiv fungerar också." }, tryFaq],
+  },
+];

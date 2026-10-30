@@ -1,0 +1,66 @@
+{
+  "name": "InkSimulator",
+  "short_name": "InkSimulator",
+  "description": "Try any tattoo on your skin in AR at 1:1 scale before you book.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "share_target": {
+    "action": "/api/public/share-target",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "image",
+          "accept": [
+            "image/*"
+          ]
+        }
+      ]
+    }
+  },
+  "shortcuts": [
+    {
+      "name": "Try it on my skin",
+      "short_name": "AR camera",
+      "url": "/ar"
+    },
+    {
+      "name": "Browse designs",
+      "short_name": "Designs",
+      "url": "/library"
+    }
+  ],
+  "categories": [
+    "lifestyle",
+    "photo",
+    "graphics"
+  ]
+}

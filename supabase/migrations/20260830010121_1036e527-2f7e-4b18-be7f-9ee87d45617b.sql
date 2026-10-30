@@ -1,0 +1,1 @@
+ALTER TABLE public.vote_sessions ADD COLUMN IF NOT EXISTS vote_enabled boolean NOT NULL DEFAULT true;

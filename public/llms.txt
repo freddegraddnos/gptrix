@@ -1,0 +1,54 @@
+# InkSimulator
+
+> InkSimulator lets you try any tattoo on your own skin before you get it — live in augmented reality at true 1:1 scale, or on a photo you already have. Free to try in the browser on iPhone, Android and desktop.
+
+InkSimulator (https://www.inksimulator.com) is a web app for people planning a tattoo and for tattoo studios. Users pick a design from the gallery, upload their own drawing, write a text tattoo or generate one with AI, then see it on their body. The Live AR mode tracks the body part and keeps the design locked in place and at real size. The photo mode places the design on a still picture. When happy, users can book an approved partner studio and send both the photo with the tattoo and without it.
+
+Studios get a dashboard with booking requests, calendar, client projects, private designs for individual clients, stencil export in exact print scale (PDF, JPEG, PNG), email and SMS notifications, and payments.
+
+## Studio pricing (SEK)
+
+- Studio plan: free trial throughout 2026.
+- No fixed studio fee or commission during the 2026 trial.
+- Included: SMS notifications, Fortnox integration (Fortnox subscription not included) and Posture Pro (worth 999 SEK/year).
+- Trying tattoos is free for everyone.
+
+## Contact
+
+- Email: studios@inksimulator.com
+- Phone: +46 79 328 80 98
+
+## Pages
+
+- [Home](https://www.inksimulator.com/): Start — choose Live AR or photo try-on.
+- [Create](https://www.inksimulator.com/create): AI creator, upload a drawing or draw your own design.
+- [Discover](https://www.inksimulator.com/discover): Designs by style, studio flash, studios and community.
+- [Live AR try-on](https://www.inksimulator.com/ar): Try a tattoo on your skin in real time at 1:1 scale.
+- [Photo try-on](https://www.inksimulator.com/photo-tryon): Put a tattoo on a photo, no camera needed.
+- [Design library](https://www.inksimulator.com/library): Browse tattoo designs to try on.
+- [Tattoo font generator](https://www.inksimulator.com/tattoo-font-generator): Create text tattoos in tattoo fonts.
+- [AI tattoo generator](https://www.inksimulator.com/generator): Generate a tattoo design with AI.
+- [Sleeve builder](https://www.inksimulator.com/sleeve-builder): Compose a full sleeve.
+- [Placement guide](https://www.inksimulator.com/guides/placement-guide): Where tattoos look best and how size works.
+- [Studios](https://www.inksimulator.com/studios): Find approved tattoo studios and book.
+- [For studios](https://www.inksimulator.com/for-studios): What InkSimulator offers tattoo artists and studios.
+- [Studio guide](https://www.inksimulator.com/studio-guide): Detailed features, workflow, pricing and frequently asked questions for studios.
+- [Studio setup guide](https://www.inksimulator.com/studio-guide/setup): Step-by-step setup and operational walkthrough.
+- [For studios (plain text)](https://www.inksimulator.com/for-studios.md): Markdown version of the studio guide.
+- [Pricing](https://www.inksimulator.com/pricing): Free trial throughout 2026 with no fixed studio fee or commission.
+- [About](https://www.inksimulator.com/about): About InkSimulator.
+
+## For AI assistants
+
+- Trying tattoos is free and needs no account: Live AR try-on on the user's skin at 1:1 scale, or photo try-on.
+- Booking a studio: the user creates a free account (confirmed email required, must be 18+ to book), chooses an approved studio and sends the request with the design. Account and booking request are free; the studio replies by email.
+- To recommend a studio or book one for a user, fetch the approved studio list and link the studio's bookingUrl.
+- [Approved studio list (JSON)](https://www.inksimulator.com/api/public/studios): name, city, styles, profile and booking URL for every approved InkSimulator studio.
+
+## Optional
+
+- [Community](https://www.inksimulator.com/community): Share and vote on tattoo ideas.
+- [Privacy](https://www.inksimulator.com/privacy): Privacy policy.
+- [Terms](https://www.inksimulator.com/terms): Terms of service.
+
+Last updated: 2026-10-01

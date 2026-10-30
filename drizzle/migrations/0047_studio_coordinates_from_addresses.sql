@@ -1,0 +1,3 @@
+UPDATE public.artist_profiles AS a SET lat = v.la, lng = v.lo
+FROM (VALUES ('Beyond ink studio',59.3353039,18.0388927),('Studio blanco tattoo',59.3084749,18.0658765),('Davinci Studio',59.3143727,18.0899761),('AFFE TATTOO',59.3327793,17.9788949),('Ida Leino ink n art',59.3327793,17.9788949),('Kontrast ink gallery',59.3074027,18.0784854)) AS v(n, la, lo)
+WHERE a.studio_name = v.n AND a.lat IS NULL AND a.lng IS NULL AND a.approval_status = 'approved';

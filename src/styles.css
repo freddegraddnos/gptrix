@@ -1,0 +1,1202 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-paper-ink: var(--paper-ink);
+  --color-stencil-paper: var(--stencil-paper);
+
+  --color-slate: var(--slate);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: "DM Mono", ui-monospace, monospace;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+  --font-display: "Anton", "Impact", sans-serif;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+:root {
+  --ink: #050505;
+  /* White remains available for tattoo artwork and image workspaces. */
+  --paper: #fafafa;
+  --stencil-paper: #ffffff;
+  --paper-ink: #050505;
+
+  --slate: #121212;
+  --background: #050505;
+  --foreground: #fafafa;
+  --card: #0d0d0d;
+  --card-foreground: #fafafa;
+  --popover: #0d0d0d;
+  --popover-foreground: #fafafa;
+  --primary: #8A5BF2;
+  --primary-foreground: #050505;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #fafafa;
+  --muted: #171717;
+  --muted-foreground: #9e9e9e;
+  --accent: #8A5BF2;
+  --accent-foreground: #050505;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #8A5BF2;
+  --reference-fade: radial-gradient(circle at 0 0, color-mix(in oklab, var(--accent) 16%, transparent) 0, transparent 48%);
+  --radius: 0.75rem;
+}
+
+/* Customer homepage only: the warmer pink-violet from the InkSimulator logo.
+   Studio pages keep the established violet tokens above. */
+.home-poster {
+  --accent: #8c60f5;
+  --accent-foreground: var(--ink);
+  --ring: #8c60f5;
+  --ar-corner: #f7f3fd;
+  --ar-glow: #a98eee;
+  --ar-glow-outer: #462892;
+}
+
+/* Classic InkSimulator palette on every page. */
+html.theme-ink.theme-violet {
+  --primary: #8A5BF2;
+  --primary-foreground: #050505;
+  --accent: #8A5BF2;
+  --accent-foreground: #050505;
+  --ring: #8A5BF2;
+  color-scheme: dark;
+}
+/* Studio-only bright mode: leave artwork and the customer site untouched. */
+.studio-bright {
+  --background: #fafafa;
+  --foreground: #161616;
+  --card: #ffffff;
+  --card-foreground: #161616;
+  --popover: #ffffff;
+  --popover-foreground: #161616;
+  --secondary: #efefef;
+  --secondary-foreground: #161616;
+  --muted: #eeeeee;
+  --muted-foreground: #555555;
+  --border: rgba(0, 0, 0, 0.18);
+  --input: rgba(0, 0, 0, 0.18);
+  --accent: #8A5BF2;
+  --accent-foreground: #ffffff;
+  --primary: #161616;
+  --primary-foreground: #fafafa;
+  color-scheme: light;
+}
+/* Legacy dark-only utility colours in studio tab bodies. */
+.studio-bright .bg-slate { background-color: var(--card); }
+.studio-bright :is(.border-white\/5, .border-white\/10, .border-white\/15, .border-white\/20) { border-color: var(--border); }
+.studio-bright :is(.bg-white\/\[0\.03\], .bg-white\/\[0\.04\], .bg-white\/5, .bg-white\/10, .bg-white\/15) { background-color: var(--card); }
+.studio-bright .text-white { color: var(--foreground); }
+.studio-bright .bg-accent.text-white,
+.studio-bright .bg-accent .text-white { color: var(--accent-foreground); }
+.studio-bright .text-black { color: var(--foreground); }
+.studio-bright .bg-ink\/60 { background-color: var(--secondary); }
+.studio-bright .bg-ink\/80 { background-color: var(--secondary); }
+.studio-bright .bg-ink { background-color: var(--secondary); }
+.studio-bright .min-h-screen.bg-ink { background-color: var(--background); }
+.studio-bright :is(input, textarea, select) { color-scheme: light; }
+.studio-bright .text-accent { color: #693cce; }
+.studio-bright .bg-accent.text-accent { color: var(--accent-foreground); }
+.studio-bright :is(.text-white\/70, .text-white\/80, .text-white\/90) { color: var(--muted-foreground); }
+.studio-bright :is(.text-amber-300, .text-amber-400) { color: #855200; }
+.studio-bright :is(.text-emerald-300, .text-emerald-400) { color: #096b45; }
+.studio-bright :is(.text-red-300, .text-red-400) { color: #a52432; }
+.light-actions .studio-bright :is(button, a, label)[class~="bg-accent"] { background-color: var(--accent); color: var(--accent-foreground); }
+.light-actions .studio-bright :is(button, a, label)[class~="bg-accent"]:hover { background-color: color-mix(in oklab, var(--accent) 88%, var(--background)); }
+.studio-bright :is(button, a, label)[class~="bg-accent"] :is(.text-black, .text-ink, .text-white) { color: var(--accent-foreground); }
+.studio-heading { text-shadow: 0.025em 0.025em 0 color-mix(in oklab, var(--accent) 55%, transparent); }
+.studio-bright .studio-heading { text-shadow: 0.025em 0.025em 0 color-mix(in oklab, var(--accent) 25%, transparent); }
+/* Commands are paper-white away from the start page; violet remains an accent. */
+.light-actions {
+  --primary: var(--paper);
+  --primary-foreground: var(--paper-ink);
+}
+.light-actions :is(button, a, label)[class~="bg-accent"] {
+  background-color: var(--paper);
+  color: var(--paper-ink);
+}
+.light-actions :is(button, a, label)[class~="bg-accent"]:hover {
+  background-color: color-mix(in oklab, var(--paper) 88%, var(--ink));
+}
+.light-actions :is(button, a, label)[class~="bg-white"] {
+  background-color: var(--paper);
+  color: var(--paper-ink);
+}
+html.theme-ink .font-display {
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+/* Violet logo glow on Anton text across dark pages; bright studio mode opts out. */
+:where(html.theme-ink) :where(.font-display):not(:where(.studio-bright, .studio-bright *)) {
+  text-shadow: 0 0 18px color-mix(in oklab, var(--accent) 24%, transparent);
+}
+
+/* Thin, hard gray shadow like the logo's INK letters: offset down–right,
+   no blur, ~4% of the letter height (em-scaled so it follows text size). */
+@utility ink-shadow {
+  text-shadow: 0.042em 0.048em 0 rgba(172, 172, 172, 0.9);
+}
+
+@utility ink-card {
+  border: 2px solid var(--foreground);
+  border-radius: 1.25rem;
+  background-color: var(--card);
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    background-color: var(--ink);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overscroll-behavior: none;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  * {
+    border-color: var(--border);
+  }
+}
+
+.reference-surface {
+  background-color: var(--ink);
+  background-image: var(--reference-fade);
+  background-attachment: fixed;
+}
+
+.reference-detail,
+.reference-gallery {
+  background-color: color-mix(in oklab, var(--ink) 90%, var(--accent));
+  background-image: radial-gradient(circle at 0 100%, color-mix(in oklab, var(--accent) 24%, transparent), transparent 58%);
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility glass {
+  background-color: rgba(5, 5, 5, 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Light artwork surface: tattoo motifs are mostly black line art, so every
+   motif preview needs a bright background to stay readable. */
+@utility bg-checker {
+  background-color: #f4f1ec;
+  background-image:
+    linear-gradient(45deg, rgba(5, 5, 5, 0.05) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(5, 5, 5, 0.05) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(5, 5, 5, 0.05) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(5, 5, 5, 0.05) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+}
+
+/* Plain bright plate behind a motif thumbnail. */
+@utility bg-artwork {
+  background-color: #f4f1ec;
+}
+
+.motif-contrast-grid {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(45deg, color-mix(in oklab, var(--paper-ink) 8%, transparent) 25%, transparent 25%),
+    linear-gradient(-45deg, color-mix(in oklab, var(--paper-ink) 8%, transparent) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, color-mix(in oklab, var(--paper-ink) 8%, transparent) 75%),
+    linear-gradient(-45deg, transparent 75%, color-mix(in oklab, var(--paper-ink) 8%, transparent) 75%);
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  background-size: 16px 16px;
+}
+
+@utility text-mono-caps {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@utility field {
+  width: 100%;
+  height: 2.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background-color: var(--secondary);
+  padding-inline: 0.75rem;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  outline: none;
+  &:focus { border-color: var(--accent); }
+}
+
+@keyframes rec-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+
+@keyframes shutter-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(138, 91, 242, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(138, 91, 242, 0); }
+}
+
+/* Start menu: one pulse of violet light travels around the card outline.
+   Left edge lights, the light glides along the top and bottom rails, the
+   right edge catches it. Four strictly isolated 2px tracks — nothing can
+   ever move across the card content. */
+.top-beam {
+  position: relative;
+  transform: translateY(-4px);
+  box-shadow:
+    -4px 34px 64px rgba(0, 0, 0, 0.95),
+    -10px 28px 72px rgba(138, 91, 242, 0.45),
+    -6px 10px 30px rgba(138, 91, 242, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.08) inset;
+}
+
+/* Secondary card: same shadow, but the light stands still — no motion. */
+.soft-beam {
+  position: relative;
+  transform: translateY(-4px);
+  box-shadow:
+    -4px 34px 64px rgba(0, 0, 0, 0.95),
+    -10px 28px 72px rgba(138, 91, 242, 0.45),
+    -6px 10px 30px rgba(138, 91, 242, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.08) inset;
+}
+
+/* Logo floats above the grid: violet glow beneath, dark contact shadow. */
+.logo-3d {
+  filter:
+    drop-shadow(0 18px 34px rgba(0, 0, 0, 0.85))
+    drop-shadow(0 0 28px rgba(168, 85, 247, 0.55));
+}
+.soft-beam::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  border: 2px solid color-mix(in oklab, var(--accent) 28%, transparent);
+  filter:
+    drop-shadow(-4px 3px 10px color-mix(in oklab, var(--accent) 30%, transparent))
+    drop-shadow(0 4px 8px color-mix(in oklab, var(--accent) 20%, transparent));
+}
+
+/* Whole outline glows: the light slowly fades in and out, no travel. */
+.top-beam::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  border: 2px solid var(--accent);
+  filter:
+    drop-shadow(0 0 16px color-mix(in oklab, var(--accent) 65%, transparent))
+    drop-shadow(0 0 6px color-mix(in oklab, var(--accent) 45%, transparent));
+  animation: beam-fade 4.6s ease-in-out infinite;
+  will-change: opacity;
+}
+
+@keyframes beam-fade {
+  0%,
+  100% {
+    opacity: 0.18;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.pulse-line {
+  animation: slogan-glow 4.6s ease-in-out infinite;
+  color: var(--accent);
+}
+
+@keyframes slogan-glow {
+  0%, 100% {
+    color: color-mix(in oklab, var(--accent) 58%, var(--background));
+    text-shadow: none;
+  }
+  50% {
+    color: var(--accent);
+    text-shadow: 0 0 12px color-mix(in oklab, var(--accent) 75%, transparent);
+  }
+}
+
+/* Shared studio-track profile: public presentation, guides, login and workspace. */
+.studio-visual-profile:not(.studio-bright) {
+  --background: #08070c;
+  --card: #111018;
+  --card-foreground: #fafafa;
+  --popover: #111018;
+  --popover-foreground: #fafafa;
+  --secondary: #1b1727;
+  --secondary-foreground: #fafafa;
+  --foreground: #fafafa;
+  --muted: #17141f;
+  --muted-foreground: #aaa4b8;
+  --border: color-mix(in oklab, var(--foreground) 15%, transparent);
+  --input: color-mix(in oklab, var(--foreground) 17%, transparent);
+  --accent: #8A5BF2;
+  --accent-foreground: #08070c;
+  --ring: var(--accent);
+  background-color: var(--background);
+  background-image:
+    radial-gradient(58rem 40rem at 5% 8%, color-mix(in oklab, var(--accent) 17%, transparent), transparent 68%),
+    radial-gradient(46rem 38rem at 100% 52%, color-mix(in oklab, #5551c9 10%, transparent), transparent 72%);
+  background-attachment: fixed;
+  color-scheme: dark;
+  letter-spacing: 0;
+}
+.studio-visual-profile.studio-bright {
+  background-color: var(--background);
+  background-image: radial-gradient(52rem 34rem at 4% 4%, color-mix(in oklab, var(--accent) 8%, transparent), transparent 72%);
+  background-attachment: fixed;
+}
+.studio-visual-profile :is(.bg-background, .bg-card, .bg-secondary) {
+  background-clip: padding-box;
+}
+.studio-visual-profile:not(.studio-bright) :is(header, aside)[class*="bg-background"] {
+  background-color: color-mix(in oklab, var(--background) 93%, transparent);
+  backdrop-filter: blur(14px);
+}
+.studio-visual-profile:not(.studio-bright) :is(.border-border, [class*="border-white/"]) {
+  border-color: var(--border);
+}
+.studio-visual-profile .font-display {
+  letter-spacing: 0;
+}
+.studio-visual-profile:not(.studio-bright) .studio-heading,
+.studio-visual-profile:not(.studio-bright) .heading-tool {
+  text-shadow: 0 0 12px color-mix(in oklab, var(--accent) 18%, transparent);
+}
+.studio-visual-profile .studio-primary-action {
+  background-color: var(--accent);
+  color: var(--foreground);
+  box-shadow: 0 0 24px color-mix(in oklab, var(--accent) 26%, transparent);
+}
+.studio-visual-profile .studio-primary-action:hover {
+  background-color: color-mix(in oklab, var(--accent) 90%, var(--foreground));
+  box-shadow: 0 0 30px color-mix(in oklab, var(--accent) 34%, transparent);
+}
+.studio-bright .studio-primary-action {
+  color: var(--accent-foreground);
+}
+
+/* Approved platform workbench. Public pages, custom previews and drawing/AR
+   surfaces intentionally do not participate in these working-control rules. */
+.studio-workbench {
+  --background: oklch(0.145 0.012 290);
+  --foreground: oklch(0.97 0.003 290);
+  --card: oklch(0.19 0.013 290);
+  --card-foreground: var(--foreground);
+  --secondary: oklch(0.235 0.019 290);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--secondary);
+  --muted-foreground: oklch(0.77 0.018 290);
+  --accent: oklch(0.76 0.12 295);
+  --accent-foreground: var(--background);
+  --primary: var(--foreground);
+  --primary-foreground: var(--background);
+  --border: oklch(0.36 0.021 290);
+  --input: var(--border);
+  --ring: var(--accent);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --workbench-selected: oklch(0.28 0.045 295);
+  --workbench-danger: oklch(0.8 0.11 25);
+  --workbench-glow: 0 0 12px color-mix(in oklab, var(--accent) 14%, transparent);
+  --workbench-fade: radial-gradient(58rem 40rem at 0% 0%, color-mix(in oklab, var(--accent) 6%, transparent), transparent 72%);
+  background: var(--workbench-fade) var(--background);
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  letter-spacing: 0;
+  color-scheme: dark;
+}
+.studio-visual-profile.studio-workbench:not(.studio-bright) {
+  --background: oklch(0.145 0.012 290);
+  --card: oklch(0.19 0.013 290);
+  --secondary: oklch(0.235 0.019 290);
+  --muted-foreground: oklch(0.77 0.018 290);
+  --accent: oklch(0.76 0.12 295);
+  --border: oklch(0.36 0.021 290);
+  --input: var(--border);
+  background-image: var(--workbench-fade);
+}
+.studio-workbench.studio-bright {
+  --background: oklch(0.968 0.004 270);
+  --card: oklch(1 0 0);
+  --secondary: oklch(0.947 0.007 270);
+  --foreground: oklch(0.262 0.023 270);
+  --muted-foreground: oklch(0.491 0.032 266);
+  --accent: oklch(0.482 0.09 303);
+  --accent-foreground: var(--card);
+  --primary: var(--foreground);
+  --primary-foreground: var(--card);
+  --border: oklch(0.885 0.014 266);
+  --workbench-selected: oklch(0.93 0.016 300);
+  --workbench-danger: oklch(0.47 0.17 25);
+  --workbench-glow: none;
+  --workbench-fade: radial-gradient(58rem 40rem at 0% 0%, color-mix(in oklab, var(--accent) 3%, transparent), transparent 72%);
+  background-image: var(--workbench-fade);
+  color-scheme: light;
+}
+.studio-workbench .studio-card {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--foreground);
+}
+.studio-workbench .studio-subsection {
+  padding: 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--secondary);
+}
+.studio-workbench .studio-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2.5rem 1rem;
+  border-block: 1px dashed var(--border);
+  text-align: center;
+  color: var(--muted-foreground);
+}
+.studio-workbench .studio-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.375rem 0.625rem;
+  font-size: 0.8125rem;
+  color: var(--foreground);
+  background: var(--workbench-selected);
+}
+.studio-workbench :is(.studio-control, [role="tab"]):not(.studio-swatch, .studio-custom-preview *) {
+  min-height: 44px;
+  height: auto;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  white-space: normal;
+  line-height: 1.4;
+  border-radius: 8px;
+  flex-shrink: 0;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+.studio-workbench .studio-control:has(> svg:only-child):not(.studio-swatch, .studio-custom-preview *) {
+  min-width: 44px;
+}
+.studio-workbench .studio-control:is([class~="bg-accent"], [class~="bg-primary"]):not(.studio-custom-preview *) {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.studio-workbench :is(.studio-control, [role="tab"]):is([aria-pressed="true"], [aria-checked="true"], [data-state="active"]):not(.studio-custom-preview *) {
+  background: var(--workbench-selected);
+  color: var(--foreground);
+  border-color: var(--accent);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+.studio-workbench .studio-control:hover:not(:disabled, .studio-swatch, .studio-custom-preview *) {
+  background: var(--secondary);
+  color: var(--foreground);
+}
+.studio-workbench :is(button, a, input, textarea, select, summary, [tabindex]):focus-visible:not(.studio-custom-preview *) {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+.studio-workbench :is(.studio-field, input:not([type="hidden"], [type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="file"]), textarea, select):not(.studio-custom-preview *) {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--foreground);
+  background-color: var(--secondary);
+  border: 1px solid var(--input);
+  border-radius: 8px;
+  padding-inline: 0.75rem;
+}
+.studio-workbench :is(input, textarea)::placeholder { color: var(--muted-foreground); opacity: 1; }
+.studio-workbench [role="tablist"]:not(.studio-custom-preview *) { gap: 0.375rem; padding: 0.375rem; }
+.studio-workbench main :is(p, span, label, time, h3, div):is([class*="text-[9px]"], [class*="text-[10px]"], [class*="text-[11px]"], [class*="text-[12px]"], .text-xs):not(.studio-custom-preview *, .studio-control, .studio-control *) {
+  /* Legacy 9–12 px help/status copy now shares a readable compact text role. */
+  font-size: 0.8125rem;
+}
+.studio-workbench main :is(.text-muted-foreground, .text-foreground\/80):not(.studio-custom-preview *) { color: var(--muted-foreground); }
+.studio-workbench .text-accent:not(.studio-custom-preview *) { color: var(--accent); }
+.studio-workbench .text-destructive:not(.studio-custom-preview *) { color: var(--workbench-danger); }
+.studio-workbench main .font-display:not(.studio-custom-preview *) { text-shadow: none; letter-spacing: 0; }
+.studio-workbench main .studio-heading { text-shadow: var(--workbench-glow); }
+.studio-workbench main :is(h1, h2, h3) { overflow-wrap: anywhere; }
+.studio-workbench .studio-media-control { height: auto; min-height: 0; }
+.studio-workbench main label:has(input[type="file"]):not(.studio-custom-preview *) {
+  min-height: 44px;
+  font-size: 15px;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 500;
+}
+.studio-workbench main label[class~="bg-accent"]:has(input[type="file"]):not(.studio-custom-preview *) {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.studio-workbench main label:has(input[type="file"]:focus-visible):not(.studio-custom-preview *) {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+.studio-workbench main label > input[type="file"].hidden:not(.studio-custom-preview *) {
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+@media (min-width: 1024px) {
+  .studio-workbench .studio-control-compact { min-height: 36px; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .studio-workbench :is(.studio-control, [role="tab"]) { transition: none; }
+}
+
+/* Studio guide: same dark violet profile as the for-studios page. */
+.studio-guide:not(.studio-bright) {
+  --background: #09080d;
+  --card: #121019;
+  --secondary: #211933;
+  --foreground: #fafafa;
+  --muted-foreground: #b9b3c7;
+  --border: color-mix(in oklab, var(--foreground) 16%, transparent);
+  --input: var(--border);
+  --accent: #8A5BF2;
+  --ring: var(--accent);
+  color-scheme: dark;
+}
+.studio-studios-page:not(.studio-bright) {
+  --muted-foreground: #a3a3a3;
+  --border: rgba(255, 255, 255, 0.2);
+}
+.studio-guide > #features { scroll-margin-top: 6rem; }
+html:has(.studio-guide) { scroll-behavior: smooth; }
+.studio-guide .studio-section-title {
+  width: fit-content;
+  max-width: 100%;
+  text-shadow: 0 0 12px color-mix(in oklab, var(--accent) 20%, transparent);
+}
+.studio-guide .studio-violet-light {
+  filter: drop-shadow(0 0 8px color-mix(in oklab, var(--accent) 45%, transparent));
+}
+.studio-guide.studio-bright .studio-violet-light {
+  filter: drop-shadow(0 0 6px color-mix(in oklab, var(--accent) 32%, transparent));
+}
+/* Guide display type remains sharp; only the lead heading receives a restrained violet edge. */
+.studio-studios-page .font-display {
+  text-shadow: none;
+}
+.studio-studios-page:not(.studio-bright) .studio-guide-hero {
+  text-shadow: 0 0 12px color-mix(in oklab, var(--accent) 18%, transparent);
+}
+.studio-studios-page.studio-bright .font-display {
+  text-shadow: none;
+}
+.studio-studios-page .studio-contact-glow {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px color-mix(in oklab, var(--accent) 65%, transparent), 0 0 30px color-mix(in oklab, var(--accent) 35%, transparent);
+}
+.studio-studios-page .studio-contact-glow:hover {
+  box-shadow: 0 0 16px color-mix(in oklab, var(--accent) 80%, transparent), 0 0 40px color-mix(in oklab, var(--accent) 45%, transparent);
+}
+.studio-guide :is(figcaption, dt[class~="bg-primary"], [aria-pressed="true"]) {
+  box-shadow: 0 0 13px color-mix(in oklab, var(--accent) 36%, transparent);
+}
+/* Hero logo: the artwork ships with a black plate baked in. On the dark
+   guide background we screen-blend the plate away (extra contrast crushes
+   the near-black plate to pure black); in the bright theme we invert
+   (hue kept) so the plate disappears into the light card. */
+.ink-logo-blend {
+  mix-blend-mode: screen;
+  filter: contrast(1.5);
+}
+.studio-guide.studio-bright .ink-logo-blend {
+  mix-blend-mode: normal;
+  filter: invert(1) hue-rotate(180deg) contrast(1.3);
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(.studio-guide) { scroll-behavior: auto; }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .top-beam::before,
+  .pulse-line {
+    animation: none;
+  }
+  .pulse-line {
+    color: var(--accent);
+  }
+}
+
+/* The logo's violet AR grid, reused as the backdrop behind the headline.
+   A flat grid up top fading into a perspective floor, masked so it melts
+   into the black background on all sides. */
+.ar-grid {
+  position: absolute;
+  inset: -2rem -30% 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.ar-grid::before,
+.ar-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.ar-grid::before {
+  background:
+    repeating-linear-gradient(
+      to right,
+      color-mix(in oklab, var(--accent) 30%, transparent) 0 1px,
+      transparent 1px 34px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--accent) 24%, transparent) 0 1px,
+      transparent 1px 34px
+    );
+  opacity: 0.5;
+  -webkit-mask-image: radial-gradient(
+    120% 90% at 50% 40%,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.65) 55%,
+    transparent 88%
+  );
+  mask-image: radial-gradient(
+    120% 90% at 50% 40%,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.65) 55%,
+    transparent 88%
+  );
+}
+.ar-grid::after {
+  top: 45%;
+  background:
+    repeating-linear-gradient(
+      to right,
+      color-mix(in oklab, var(--accent) 46%, transparent) 0 1px,
+      transparent 1px 42px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--accent) 38%, transparent) 0 1px,
+      transparent 1px 30px
+    );
+  transform: perspective(340px) rotateX(58deg);
+  transform-origin: top center;
+  opacity: 0.55;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.95) 25%,
+    rgba(0, 0, 0, 0.5) 70%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.95) 25%,
+    rgba(0, 0, 0, 0.5) 70%,
+    transparent 100%
+  );
+}
+
+/* Start page photo backdrop: the AR photo sits underneath everything, pushed
+   back by a dark scrim so the grid, cards and logo stay fully readable. */
+.home-photo {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.home-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  opacity: 0.96;
+  filter: saturate(1.12) contrast(1.08);
+}
+.home-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image:
+    repeating-linear-gradient(to right, color-mix(in oklab, var(--accent) 80%, transparent) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(to bottom, color-mix(in oklab, var(--accent) 80%, transparent) 0 1px, transparent 1px 34px);
+  opacity: 0.78;
+  -webkit-mask-image: radial-gradient(ellipse 43% 53% at 21% 61%, black 18%, transparent 92%);
+  mask-image: radial-gradient(ellipse 43% 53% at 21% 61%, black 18%, transparent 92%);
+}
+@media (min-width: 640px) {
+  .home-photo::before {
+    -webkit-mask-image: radial-gradient(ellipse 30% 56% at 23% 63%, black 24%, transparent 92%);
+    mask-image: radial-gradient(ellipse 30% 56% at 23% 63%, black 24%, transparent 92%);
+  }
+}
+.home-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    /* solid black from the very top through the logo, then a soft hand-off */
+    linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 26%,
+       rgba(0, 0, 0, 0.42) 33%,
+       rgba(0, 0, 0, 0.12) 42%,
+      transparent 52%
+    ),
+    radial-gradient(
+      90% 55% at 50% 30%,
+      color-mix(in oklab, var(--accent) 18%, transparent) 0%,
+      transparent 72%
+    ),
+    radial-gradient(
+      110% 70% at 50% 34%,
+       rgba(0, 0, 0, 0.08) 0%,
+        rgba(0, 0, 0, 0.24) 55%,
+        rgba(0, 0, 0, 0.48) 100%
+    ),
+    linear-gradient(
+      to bottom,
+       rgba(0, 0, 0, 0.08) 40%,
+        rgba(0, 0, 0, 0.16) 62%,
+      var(--background) 100%
+    );
+}
+
+
+
+
+
+
+
+
+/* Accessibility: larger text scales everything via root font size */
+html.a11y-large {
+  font-size: 112.5%;
+}
+
+/* Larger text must reach the camera HUD too: those labels use fixed pixel
+   sizes so they would otherwise ignore the root scale. */
+html.a11y-large [class*="text-[9px]"],
+html.a11y-large [class*="text-[10px]"],
+html.a11y-large [class*="text-[11px]"] {
+  font-size: 0.8125rem !important;
+  line-height: 1.3 !important;
+}
+
+/* Accessibility: high contrast tightens borders + boosts foreground */
+html.a11y-contrast {
+  --foreground: #ffffff;
+  --muted-foreground: #d4d4d4;
+  --border: rgba(255, 255, 255, 0.28);
+  --input: rgba(255, 255, 255, 0.28);
+}
+html.a11y-contrast * {
+  border-color: var(--border);
+}
+
+
+/* Gallery sheet: a sheet of flash paper sliding up over the camera. */
+@keyframes flash-paper-up {
+  from { transform: translateY(14px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ---------------------------------------------------------------------------
+ * Drawing studio (/rita)
+ *
+ * The ported paint engine uses a neutral graphite panel palette. Those tokens
+ * only exist inside `.paint-scope` so the rest of InkSimulator is untouched, and
+ * `--primary`/`--ring` stay on the InkSimulator violet for highlights.
+ * ------------------------------------------------------------------------ */
+@theme inline {
+  --color-canvas-void: var(--canvas-void);
+  --color-panel: var(--panel);
+  --color-panel-border: var(--panel-border);
+  --shadow-panel: 0 18px 50px -18px rgba(0, 0, 0, 0.75);
+  --shadow-float: 0 12px 32px -12px rgba(0, 0, 0, 0.7);
+}
+
+:root {
+  --canvas-void: #0a0a0b;
+  --panel: #141416;
+  --panel-border: rgba(255, 255, 255, 0.08);
+}
+
+.paint-scope {
+  --background: #141416;
+  --foreground: #f5f5f6;
+  --card: #1b1b1e;
+  --card-foreground: #f5f5f6;
+  --popover: #1b1b1e;
+  --popover-foreground: #f5f5f6;
+  --secondary: #232327;
+  --secondary-foreground: #f2f2f3;
+  --muted: #202024;
+  --muted-foreground: #9a9aa2;
+  /* Neutral hover/active surface — the paint UI uses `accent` for hovers. */
+  --accent: #2a2a30;
+  --accent-foreground: #f5f5f6;
+  --border: rgba(255, 255, 255, 0.09);
+  --input: rgba(255, 255, 255, 0.12);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Violet glow used on the studio presentation imagery. */
+.studio-violet-shadow {
+  box-shadow: 0 24px 60px -24px color-mix(in oklab, var(--accent) 55%, transparent);
+}
+
+/* ---------------------------------------------------------------------------
+ * Shared component system (visual review A–H)
+ *
+ * One set of roles reused across pages: three heading levels, one primary
+ * button (white, dark text, subtle violet glow), one secondary outline
+ * button, one text link, one field, one selected state. Violet has three
+ * jobs only: hero atmosphere, glow on the key interactive element, focus.
+ * Pilot scope: /create, /$handle/book, /for-studios — roll out wider only
+ * after approval.
+ * ------------------------------------------------------------------------ */
+
+/* Heading roles: marketing page, tool page, subordinate setting. */
+@utility heading-marketing {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+@utility heading-tool {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+@utility heading-setting {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+/* Buttons: one primary, one secondary outline, one text link. */
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  border-radius: 0.75rem;
+  background-color: var(--foreground);
+  color: var(--background);
+  padding-inline: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+  box-shadow: 0 0 20px color-mix(in oklab, var(--accent) 22%, transparent);
+  transition: box-shadow 150ms ease;
+  &:hover {
+    box-shadow: 0 0 28px color-mix(in oklab, var(--accent) 32%, transparent);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+  &:disabled {
+    opacity: 0.45;
+    box-shadow: none;
+  }
+}
+@utility btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  color: var(--foreground);
+  padding-inline: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  text-transform: none;
+  transition: background-color 150ms ease;
+  &:hover {
+    background-color: var(--secondary);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+  &:disabled {
+    opacity: 0.45;
+  }
+}
+@utility btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  min-height: 2.75rem;
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  &:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+}
+
+/* Field: persistent 14 px label, 16 px text, 12 px radius, violet focus. */
+@utility field-label {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+@utility field-input {
+  width: 100%;
+  min-height: 3rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--input);
+  background-color: var(--secondary);
+  padding-inline: 0.875rem;
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+  &::placeholder {
+    color: color-mix(in oklab, var(--muted-foreground) 70%, transparent);
+  }
+  &:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 25%, transparent);
+  }
+  &[aria-invalid="true"] {
+    border-color: var(--destructive);
+  }
+}
+@utility field-error {
+  margin-top: 0.375rem;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--destructive);
+}
+
+/* Selected state: one look for filters and segmented controls. */
+@utility control-selected {
+  border-color: color-mix(in oklab, var(--accent) 55%, transparent);
+  background-color: color-mix(in oklab, var(--accent) 14%, transparent);
+  color: var(--foreground);
+  box-shadow: 0 0 12px color-mix(in oklab, var(--accent) 14%, transparent);
+}
+
+/* Approved public studio calculator; scoped to leave the guide and AR intact. */
+.studio-time-page {
+  --background: #09080d;
+  --card: #121019;
+  --secondary: #211933;
+  --foreground: #fafafa;
+  --muted-foreground: #b9b3c7;
+  --border: color-mix(in oklab, var(--foreground) 16%, transparent);
+  --input: var(--border);
+  --accent: #8A5BF2;
+  --ring: var(--accent);
+  color-scheme: dark;
+  letter-spacing: 0;
+  background-image:
+    radial-gradient(48rem 38rem at 0% 20%, color-mix(in oklab, #5149d8 24%, transparent), transparent 66%),
+    radial-gradient(42rem 34rem at 100% 42%, color-mix(in oklab, var(--accent) 10%, transparent), transparent 72%);
+  background-attachment: fixed;
+}
+.studio-time-page .font-display { letter-spacing: 0; }
+.studio-time-page .studio-time-heading {
+  text-shadow: 0 0 16px color-mix(in oklab, var(--accent) 24%, transparent);
+  overflow-wrap: anywhere;
+}
+.studio-time-page .studio-time-amount {
+  text-shadow: none;
+  overflow-wrap: anywhere;
+}
+.studio-time-page input.font-display { text-shadow: none; }
+.studio-time-logo { mix-blend-mode: screen; }
+.studio-time-calculator {
+  border-color: color-mix(in oklab, var(--accent) 48%, var(--background));
+  box-shadow: 0 0 40px color-mix(in oklab, var(--accent) 9%, transparent), inset 0 1px 0 color-mix(in oklab, var(--foreground) 4%, transparent);
+}
+.studio-time-language {
+  border: 1px solid color-mix(in oklab, var(--accent) 35%, transparent);
+  box-shadow: 0 0 12px color-mix(in oklab, var(--accent) 12%, transparent);
+}
+.studio-time-demo {
+  box-shadow: 0 0 24px color-mix(in oklab, var(--accent) 32%, transparent);
+}
+.light-actions .studio-time-page .studio-time-demo {
+  background-color: var(--accent);
+  color: var(--foreground);
+}
+.light-actions .studio-time-page .studio-time-demo:hover {
+  background-color: color-mix(in oklab, var(--accent) 90%, var(--background));
+}
+.studio-time-summary { list-style: none; }
+.studio-time-summary::-webkit-details-marker { display: none; }
+.studio-goto {
+  background-image: radial-gradient(42rem 28rem at 0% 0%, color-mix(in oklab, var(--accent) 9%, transparent), transparent 72%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .studio-time-page svg { transition: none; }
+}
+
+/* ---------------------------------------------------------------------------
+ * Design proposal (Prompt 1) — scoped to .ds-preview on /design-preview only.
+ * Deep near-black base with large, static blue-violet light fading to dark.
+ * ------------------------------------------------------------------------ */
+.ds-preview {
+  --background: #07060c;
+  --ds-atmosphere: #4a4fc9;
+  background-color: var(--background);
+  background-image:
+    radial-gradient(70rem 48rem at 12% -12%, color-mix(in oklab, var(--ds-atmosphere) 20%, transparent), transparent 70%),
+    radial-gradient(60rem 44rem at 105% 55%, color-mix(in oklab, var(--ds-atmosphere) 11%, transparent), transparent 72%);
+  background-attachment: fixed;
+}
+.ds-preview .ds-header { background-color: color-mix(in oklab, var(--background) 82%, transparent); backdrop-filter: blur(12px); }
+/* Heading glow: clearer on presentation pages, much softer in guides. */
+.ds-preview .studio-time-heading,
+.ds-glow-strong { text-shadow: 0 0 28px color-mix(in oklab, var(--accent) 42%, transparent), 0 0 2px color-mix(in oklab, var(--accent) 20%, transparent); }
+.ds-glow-soft { text-shadow: 0 0 22px color-mix(in oklab, var(--accent) 16%, transparent); }
+.studio-bright .ds-glow-strong, .studio-bright .ds-glow-soft { text-shadow: none; }
+/* Cards and rounded filters 20–24 px; buttons/fields 12 px. */
+.ds-preview .studio-time-calculator,
+.ds-preview section.bg-card,
+.ds-card { border-radius: 1.5rem; }
+.ds-preview :is(.btn-primary, .btn-secondary) { min-height: 3.125rem; border-radius: 0.75rem; }
+.ds-preview :is(.btn-primary, .btn-secondary) :not(svg, path) { font: inherit; text-transform: inherit; letter-spacing: inherit; }
+.ds-preview form button[type="submit"] {
+  min-height: 3.125rem; border-radius: 0.75rem; background-color: var(--foreground); color: var(--background);
+  font-family: var(--font-mono); font-size: 0.9375rem; font-weight: 500; letter-spacing: normal; text-transform: none;
+  box-shadow: 0 0 20px color-mix(in oklab, var(--accent) 22%, transparent);
+}
+.ds-preview input { font-size: 1rem; border-radius: 0.75rem; }
+.ds-preview form label { font-size: 0.875rem; }
+/* Filters / language: DM Mono 13–14 px, no weight change on select. */
+.ds-preview [role="group"] button,
+.ds-filter { font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 400; letter-spacing: normal; text-transform: none; }
+.ds-filter { min-height: 2.5rem; border-radius: 1.25rem; border: 1px solid var(--border); padding-inline: 1rem; color: var(--muted-foreground); }
+.ds-filter[aria-pressed="true"] { border-color: color-mix(in oklab, var(--accent) 55%, transparent); background-color: color-mix(in oklab, var(--accent) 14%, transparent); color: var(--foreground); }
+/* Navigation card family: Anton title + DM Mono description. */
+.ds-navcard { display: block; border-radius: 1.5rem; border: 1px solid var(--border); background-color: var(--card); padding: 1.25rem; transition: border-color 150ms ease; }
+.ds-navcard:hover, .ds-navcard:focus-visible { border-color: var(--accent); outline: none; }
+/* Motif imagery is never tinted by atmosphere effects. */
+.ds-preview .ds-media { background-color: #ffffff; isolation: isolate; }
+.ds-preview :is(h1, h2, h3, h4):not(.ds-glow-strong, .ds-glow-soft, .studio-time-heading) { text-shadow: none; }
+.ds-preview .ds-accent-btn { background-color: var(--accent); color: var(--foreground); box-shadow: none; }
+
+/* Customer track atmosphere (deviation pass): calm static blue-violet fade on
+   working views; no looping glow animations — motion only explains change. */
+.calm-surface {
+  background-color: var(--ink);
+  background-image: radial-gradient(ellipse 90% 45% at 50% 0, color-mix(in oklab, #5b4bd6 11%, transparent), transparent 70%);
+  background-attachment: fixed;
+}
+.top-beam::before { animation: none; opacity: 0.55; }
+.pulse-line { animation: none; color: var(--accent); }
+
+/* Mobile paint controls only. Reserve space rather than cover the canvas. */
+.paint-mobile { --paint-nav-h: calc(60px + env(safe-area-inset-bottom)); }
+.paint-mobile-panel { max-height: min(48dvh, 390px); display: flex; flex-direction: column; }
+.paint-mobile-back button { width: 44px; height: 44px; padding: 0; }
+.paint-mobile-back button span { display: none; }
+.paint-mobile-panel-body { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.paint-mobile-context > * { position: static; width: 100%; max-width: 100%; transform: none; flex-wrap: wrap; margin-top: 8px; }
+.paint-mobile-context button { min-height: 44px; }
+.paint-mobile-context button span { display: inline; }
+.paint-mobile-context > div:has(> .pointer-events-auto) { display: contents; }
+.paint-mobile-panel-body > .pointer-events-auto { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
+.paint-mobile-layers > div { padding-inline: 0; }
+.paint-mobile-layers > div:first-child { padding-right: 0; }
+.paint-mobile-layers [class*="h-[100px]"] { height: auto; min-height: 132px; padding-block: 8px; align-items: flex-start; }
+.paint-mobile-layers [class*="mt-1.5 flex items-center gap-1"] { flex-wrap: wrap; }
+.paint-mobile-layers [role="combobox"] { flex-basis: 100%; }
+.paint-mobile :is(button, input, select, textarea) { font-family: var(--font-mono); }
+.paint-mobile :is(button, input, select, textarea):focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+@media (max-height: 500px) { .paint-mobile-panel { max-height: min(42dvh, calc(100dvh - var(--studio-bar-h, 0px) - 244px)); } }
+@media (prefers-reduced-motion: reduce) { .paint-mobile *, .paint-mobile *::before, .paint-mobile *::after { animation: none !important; transition: none !important; } }
+
+/* Platform controls on studio pages keep the readable interface font; the studio's decorative font is for headings only. */
+.studio-page :is(button, a, input, select, textarea, label, nav) { font-family: var(--font-sans); }
